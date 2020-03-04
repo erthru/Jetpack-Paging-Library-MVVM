@@ -14,10 +14,8 @@ import kotlinx.android.synthetic.main.list_users.view.*
 class UsersAdapter : PagedListAdapter<User, UsersAdapter.ViewHolder>(USER_COMPARATOR){
     companion object {
         private val USER_COMPARATOR = object : DiffUtil.ItemCallback<User>() {
-            override fun areItemsTheSame(oldItem: User, newItem: User): Boolean =
-                oldItem.id == newItem.id
-            override fun areContentsTheSame(oldItem: User, newItem: User): Boolean =
-                newItem == oldItem
+            override fun areItemsTheSame(oldItem: User, newItem: User): Boolean = oldItem.id == newItem.id
+            override fun areContentsTheSame(oldItem: User, newItem: User): Boolean = newItem == oldItem
         }
     }
 
