@@ -21,18 +21,8 @@ class UsersAdapter : PagedListAdapter<User, UsersAdapter.ViewHolder>(USER_COMPAR
         }
     }
 
-    private var TYPE_LOADING = 0
-    private var TYPE_VIEW = 1
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return when(viewType){
-            TYPE_VIEW -> ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_users, parent, false))
-            else -> ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.loading, parent, false))
-        }
-    }
-
-    override fun getItemViewType(position: Int): Int {
-        return if(getItem(position) == null) TYPE_LOADING else TYPE_VIEW
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_users, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
